@@ -11,6 +11,7 @@ import {
 } from "@react-pdf/renderer";
 import Title from "./Title";
 import readmodel from "./readmodel.jpg";
+import { useGlobalContext } from "./context";
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -393,12 +394,17 @@ const students = [
 
 // Create Document Component
 function BasicDocument() {
+    const {resultArray, setResultArray, inputData, setInputData} = useGlobalContext()
+    console.log(resultArray)
+    console.log(JSON.parse(resultArray))
+
   return (
+
     <PDFViewer style={styles.viewer}>
       {/* Start of the document*/}
       <Document>
         {/*render a single page*/}
-        {students.map((student) => {
+        {resultArray.map((student) => {
           const { name, number, level, results } = student;
           return (
             <Page size="A4" style={styles.page}>
