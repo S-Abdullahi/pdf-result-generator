@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
   titleCon: {
     lineHeight: 0.5,
+    marginTop:-18
   },
   section: {
     margin: 10,
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
   centerText: {
     textAlign: "center",
     fontSize: 20,
+    marginTop: -20
   },
   viewer: {
     width: window.innerWidth, //the pdf viewer will take up all of the width and height
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
     gap: 10,
     padding: 10,
     border: "0.8px solid black",
+    marginTop: -20
   },
   resultSummaryTitle: {
     fontWeight: "bold",
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginLeft: 10,
     marginRight: 10,
-    padding: 10,
+    padding: 7,
     backgroundColor: "#f8f9fa",
     borderBottom: "0.5px solid gray",
   },
@@ -145,258 +148,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const students = [
-  {
-    name: "Abdullateef Faridah",
-    number: 14,
-    level: "JJ2",
-    results: [
-      {
-        sn: 1,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 2,
-        subject: "English",
-        test: 20,
-        exam: 40,
-        total: 60,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 3,
-        subject: "Agric Science",
-        test: 14,
-        exam: 45,
-        total: 59,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 4,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 5,
-        subject: "Agric Science",
-        test: 14,
-        exam: 45,
-        total: 59,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 6,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 7,
-        subject: "Agric Science",
-        test: 14,
-        exam: 45,
-        total: 59,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 8,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      }
-    ],
-  },
-  {
-    name: "Salawu Abdullah",
-    number: 12,
-    level: "JJ3",
-    results: [
-      {
-        sn: 1,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 2,
-        subject: "English",
-        test: 20,
-        exam: 40,
-        total: 60,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 3,
-        subject: "Agric Science",
-        test: 14,
-        exam: 45,
-        total: 59,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 1,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      }
-    ],
-  },
-  {
-    name: "Mutiu Sukurat",
-    number: 13,
-    level: "JJ3",
-    results: [
-      {
-        sn: 1,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 2,
-        subject: "English",
-        test: 20,
-        exam: 40,
-        total: 60,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 3,
-        subject: "Agric Science",
-        test: 14,
-        exam: 50,
-        total: 64,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-    ],
-  },
-  {
-    name: "Abdullateef Umar",
-    number: 14,
-    level: "JJ2",
-    results: [
-      {
-        sn: 1,
-        subject: "mathematics",
-        test: 20,
-        exam: 50,
-        total: 70,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "A",
-      },
-      {
-        sn: 2,
-        subject: "English",
-        test: 20,
-        exam: 40,
-        total: 60,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-      {
-        sn: 3,
-        subject: "Agric Science",
-        test: 14,
-        exam: 45,
-        total: 59,
-        classhighest: "",
-        classlowest: "",
-        subjectPosition: "",
-        classAverage: "",
-        grade: "B",
-      },
-    ],
-  },
-];
-
 // Create Document Component
 function BasicDocument() {
     const {resultArray, setResultArray, inputData, setInputData} = useGlobalContext()
-    console.log(resultArray)
-    console.log(JSON.parse(resultArray))
 
   return (
 
@@ -488,7 +242,7 @@ function BasicDocument() {
                 <Text style={styles.average}>Class Average Score</Text>
                 <Text style={styles.grade}>Grade Key</Text>
               </View>
-              {results.map((result) => {
+              {results.map((result, index) => {
                 const {
                   sn,
                   subject,
@@ -502,7 +256,7 @@ function BasicDocument() {
                   grade,
                 } = result;
                 return (
-                  <View style={styles.tableMainContainer}>
+                  <View style={styles.tableMainContainer} key={index}>
                     <Text style={styles.sn}>{sn}</Text>
                     <Text style={styles.subject}>{subject}</Text>
                     <Text style={styles.test}>{test}</Text>
