@@ -42,6 +42,7 @@ function BasicDocument() {
           const numberOfSubjects = results.length
           const numberOfSubjectsPassed = results.filter(result => result.total >= 50).length
           const numberOfSubjectsFailed = results.filter(result => result.total < 50).length
+
           return (
             <Page size="A4" style={styles.page} key={index}>
               {/* page heading */}
@@ -66,11 +67,11 @@ function BasicDocument() {
               {/* Table heading */}
               <TableHeading />
               {results.map((result, index) => {
-                // table row
+                // table row   
                 return <TableRow {...result} key={index} />;
               })}
               <TotalResultSummary totalscore={totalScore} maxObtainableScore={maxObtainableScore} averagePercentage={averagePercentage}/>
-              <Comment />
+              <Comment averagePercentage={averagePercentage} />
               <NextTerm />
             </Page>
           );
