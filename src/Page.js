@@ -26,23 +26,31 @@ import NextTerm from "./components/NextTerm";
 function BasicDocument() {
   const { resultArray, setResultArray, inputData, setInputData } =
     useGlobalContext();
+    
+  const numberOfStudents = resultArray.length
 
   return (
     <PDFViewer style={styles.viewer}>
       {/* Start of the document*/}
       <Document>
         {/*render a single page*/}
-        {resultArray.map((student) => {
+        {resultArray.map((student, index) => {
           const { name, number, level, results } = student;
+          const totalScore = results.map(el => el.total).reduce((acc, curr)=> acc + curr, 0)
+          const maxObtainableScore = results.length * 100
+          const averagePercentage = ((totalScore/ maxObtainableScore ) * 100).toFixed(2)
+          const numberOfSubjects = results.length
+          const numberOfSubjectsPassed = results.filter(result => result.total >= 50).length
+          const numberOfSubjectsFailed = results.filter(result => result.total < 50).length
           return (
-            <Page size="A4" style={styles.page}>
+            <Page size="A4" style={styles.page} key={index}>
               {/* page heading */}
               <PageHeading />
               {/* student information */}
               <StudentInfo name={name} number={number} level={level} />
 
               {/* result summary*/}
-              <ResultSummary />
+              <ResultSummary numOfStudent={numberOfStudents} numOfSubjects={numberOfSubjects} numOfSubPassed={numberOfSubjectsPassed} numOfSubFailed={numberOfSubjectsFailed}/>
               <View>
                 <Text
                   style={{
@@ -61,7 +69,7 @@ function BasicDocument() {
                 // table row
                 return <TableRow {...result} key={index} />;
               })}
-              <TotalResultSummary />
+              <TotalResultSummary totalscore={totalScore} maxObtainableScore={maxObtainableScore} averagePercentage={averagePercentage}/>
               <Comment />
               <NextTerm />
             </Page>

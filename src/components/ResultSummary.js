@@ -13,7 +13,7 @@ import Title from "./Title";
 import { useGlobalContext } from "../context";
 import { styles } from "../stylesheet";
 
-function ResultSummary() {
+function ResultSummary({numOfStudent, numOfSubjects, numOfSubPassed, numOfSubFailed}) {
   return (
     <View
       style={{
@@ -26,19 +26,19 @@ function ResultSummary() {
     >
       <View style={styles.resultSummaryContainer}>
         <Text>NO IN CLASS</Text>
-        <Text style={styles.resultSummaryValue}>20</Text>
+        <Text style={styles.resultSummaryValue}>{numOfStudent}</Text>
       </View>
       <View style={styles.resultSummaryContainer}>
         <Text>NUMBER OF SUBJECTS</Text>
-        <Text style={styles.resultSummaryValue}>9</Text>
+        <Text style={styles.resultSummaryValue}>{numOfSubjects}</Text>
       </View>
       <View style={styles.resultSummaryContainer}>
         <Text>NUMBER PASSED</Text>
-        <Text style={styles.resultSummaryValue}>6</Text>
+        <Text style={styles.resultSummaryValue}>{numOfSubPassed}</Text>
       </View>
       <View style={styles.resultSummaryContainer}>
         <Text>NUMBER FAILED</Text>
-        <Text style={styles.resultSummaryValue}>5</Text>
+        <Text style={styles.resultSummaryValue}>{numOfSubFailed}</Text>
       </View>
       <View style={styles.resultSummaryContainer}>
         <Text style={styles.resultSummaryTitle}>POSITION IN CLASS</Text>
