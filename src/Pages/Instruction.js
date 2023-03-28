@@ -1,5 +1,5 @@
 import React from "react";
-import readmodel from "./readmodel2.svg";
+import readmodel from "../readmodel2.svg";
 import { IoIosBasketball } from "react-icons/io";
 import { Link } from "react-router-dom";
 

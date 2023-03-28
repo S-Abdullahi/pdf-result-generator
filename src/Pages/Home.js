@@ -1,5 +1,5 @@
 import React from "react";
-import readmodel from "./readmodel.jpg";
+import readmodel from "../readmodel.jpg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
