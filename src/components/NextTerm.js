@@ -23,7 +23,7 @@ function NextTerm() {
         fontWeight: 600,
       }}
     >
-      <Text>Next Term Begins: ##-##-##</Text>
+      <Text>Next Term Begins: May 2, 2023</Text>
     </View>
   );
 }

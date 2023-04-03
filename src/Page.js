@@ -22,12 +22,26 @@ import Comment from "./components/Comment";
 import NextTerm from "./components/NextTerm";
 // Create styles
 
+
+
 // Create Document Component
 function BasicDocument() {
   const { resultArray, setResultArray, inputData, setInputData } =
     useGlobalContext();
     
   const numberOfStudents = resultArray.length
+  // const testing = resultArray.map(el => el.results)
+  // console.log(testing)
+  function classhighest(id){
+    const testing = resultArray.map(el => el.results).map(result => result)
+    console.log(testing)
+    
+    
+  
+    // console.log(testing)
+  }
+
+  const positionArray = []
 
   return (
     <PDFViewer style={styles.viewer}>
@@ -35,13 +49,15 @@ function BasicDocument() {
       <Document>
         {/*render a single page*/}
         {resultArray.map((student, index) => {
-          const { name, number, level, results } = student;
-          const totalScore = results.map(el => el.total).reduce((acc, curr)=> acc + curr, 0)
+          const { name, number, level, results, position } = student;
+          const totalScore = results.map(el => el.test + el.exam).reduce((acc, curr)=> acc + curr, 0)
           const maxObtainableScore = results.length * 100
           const averagePercentage = ((totalScore/ maxObtainableScore ) * 100).toFixed(2)
+          positionArray.push(averagePercentage)
+          console.log(positionArray)
           const numberOfSubjects = results.length
-          const numberOfSubjectsPassed = results.filter(result => result.total >= 50).length
-          const numberOfSubjectsFailed = results.filter(result => result.total < 50).length
+          const numberOfSubjectsPassed = results.filter(result => (result.exam + result.test) >= 50).length
+          const numberOfSubjectsFailed = results.filter(result => (result.exam + result.test) < 50).length
 
           return (
             <Page size="A4" style={styles.page} key={index}>
@@ -51,7 +67,7 @@ function BasicDocument() {
               <StudentInfo name={name} number={number} level={level} />
 
               {/* result summary*/}
-              <ResultSummary numOfStudent={numberOfStudents} numOfSubjects={numberOfSubjects} numOfSubPassed={numberOfSubjectsPassed} numOfSubFailed={numberOfSubjectsFailed}/>
+              <ResultSummary numOfStudent={numberOfStudents} numOfSubjects={numberOfSubjects} numOfSubPassed={numberOfSubjectsPassed} numOfSubFailed={numberOfSubjectsFailed} position={position}/>
               <View>
                 <Text
                   style={{
@@ -68,6 +84,7 @@ function BasicDocument() {
               <TableHeading />
               {results.map((result, index) => {
                 // table row   
+                classhighest(result.sn)
                 return <TableRow {...result} key={index} />;
               })}
               <TotalResultSummary totalscore={totalScore} maxObtainableScore={maxObtainableScore} averagePercentage={averagePercentage}/>

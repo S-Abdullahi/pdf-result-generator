@@ -13,7 +13,7 @@ import Title from "./Title";
 import { useGlobalContext } from "../context";
 import { styles } from "../stylesheet";
 
-function ResultSummary({numOfStudent, numOfSubjects, numOfSubPassed, numOfSubFailed}) {
+function ResultSummary({numOfStudent, numOfSubjects, numOfSubPassed, numOfSubFailed, position}) {
   return (
     <View
       style={{
@@ -42,7 +42,7 @@ function ResultSummary({numOfStudent, numOfSubjects, numOfSubPassed, numOfSubFai
       </View>
       <View style={styles.resultSummaryContainer}>
         <Text style={styles.resultSummaryTitle}>POSITION IN CLASS</Text>
-        <Text style={styles.resultSummaryValue}>2</Text>
+        <Text style={styles.resultSummaryValue}>{position}</Text>
       </View>
     </View>
   );

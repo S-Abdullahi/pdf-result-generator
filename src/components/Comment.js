@@ -42,11 +42,12 @@ function Comment({averagePercentage}) {
           padding: 2,
           width: "50%",
           lineHeight: 2,
-        }}
+        }} 
       >
-        <Text style={{ fontSize: 10 }}>Principal's Comment:</Text>
-        <Text style={{ fontSize: 11, fontStyle: 'italic' }}>
-          &nbsp; {principalComment}
+        <Text style={{ fontSize: 10 }} >Principal's Comment:</Text>
+        <Text style={styles.comment}>
+          &nbsp;
+          {/* &nbsp; {principalComment} */}
         </Text>
       </View>
       <View style={{ border: "1px solid black", width: "50%" }}>

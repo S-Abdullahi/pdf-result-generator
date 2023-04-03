@@ -76,32 +76,32 @@ export const styles = StyleSheet.create({
       fontSize: 7,
     },
     subject: {
-      width: "15%",
+      width: "25%",
       textAlign: "left",
       fontSize: 8,
     },
     test: {
-      width: "10%",
+      width: "15%",
       textAlign: "center",
       fontSize: 9,
     },
     exam: {
-      width: "10%",
+      width: "20%",
       textAlign: "center",
       fontSize: 9,
     },
     total: {
-      width: "10%",
+      width: "20%",
       textAlign: "center",
       fontSize: 9,
     },
     highest: {
-      width: "10%",
+      // width: "15%",
       textAlign: "center",
       fontSize: 9,
     },
     lowest: {
-      width: "10%",
+      // width: "15%",
       textAlign: "center",
       fontSize: 9,
     },
@@ -116,7 +116,7 @@ export const styles = StyleSheet.create({
       fontSize: 9,
     },
     grade: {
-      width: "10%",
+      width: "15%",
       textAlign: "center",
       fontSize: 9,
     },
@@ -132,4 +132,8 @@ export const styles = StyleSheet.create({
     totalResultValue: {
       fontSize: 10,
     },
+    comment: {
+      fontStyle: "italic",
+      fontSize: 11
+    }
   });
