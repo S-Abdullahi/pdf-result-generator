@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import testing from "../Testing";
 
 const InputPage = () => {
   const { resultArray, setResultArray, inputData, setInputData } =

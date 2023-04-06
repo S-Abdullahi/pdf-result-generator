@@ -1,6 +1,7 @@
 import React from "react";
 import readmodel from "../readmodel.jpg";
 import { Link } from "react-router-dom";
+import Testing from "../Testing";
 
 const Home = () => {
   return (
@@ -9,11 +10,10 @@ const Home = () => {
       <h2 className="text-5xl mt-10">Read Model College</h2>
       {/* <h2 className="text-5xl mt-10">Result Generator</h2> */}
 
-      <Link to='/instruction'>
-        <button className="btn">
-          Get started
-        </button>
+      <Link to="/instruction">
+        <button className="btn">Get started</button>
       </Link>
+      <Testing />
     </main>
   );
 };
